@@ -6,38 +6,29 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:09:18 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/09 13:01:42 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/10 12:14:22 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	free_nodes(t_node *node)
+void	free_stack(t_stack *s)
 {
-	t_node	*next;
-	t_node	*tmp;
-
-	if (node)
-	{
-		next = node->next;
-		while (next != node)
-		{
-			tmp = next;
-			next = next->next;
-			free(tmp);
-		}
-		free(next);
-	}
+	if (s)
+		free(s->num);
+	free(s);
 }
 
-void	free_struct(t_stack *stack)
+void	free_all_exit(t_info *info, t_push_swap *stack)
 {
 	if (stack)
 	{
-		if (stack->a)
-			free_nodes(stack->a);
-		if (stack->b)
-			free_nodes(stack->b);
-		free(stack);
+		free_stack(stack->a);
+		free_stack(stack->b);
+		free_stack(stack->swap);
 	}
+	if (info->ac == 2)
+		free_table(info->av);
+	free(info);
+	exit(0);
 }
