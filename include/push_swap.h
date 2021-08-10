@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/10 12:35:03 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/10 13:25:21 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include "../libft/libft.h"
 typedef struct s_stack
 {
-	long	*num;
-	int		size;
+	int	*num;
+	int	size;
 }				t_stack;
 
 typedef struct s_push_swap
@@ -33,8 +33,6 @@ typedef struct s_push_swap
 typedef struct s_info
 {
 	int		stack_size;
-	int		size_a;
-	int		size_b;
 	int		ac;
 	char	**av;
 }			t_info;

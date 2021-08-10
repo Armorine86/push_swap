@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 11:05:57 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/10 12:20:28 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/10 13:27:38 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ t_info	*init_struct(t_info *info, int ac, char **av)
 
 int	main(int ac, char **av)
 {
-	t_push_swap	*stack;
+	t_push_swap	stack;
 	t_info		*info;
 
-	stack = NULL;
 	info = NULL;
 	if (ac < 2)
 		return (0);
@@ -35,6 +34,6 @@ int	main(int ac, char **av)
 	if (!info)
 		error_exit();
 	validate_args(info);
-	build_stacks(stack, info);
-	free_all_exit(info, stack);
+	build_stacks(&stack, info);
+	free_all_exit(info, &stack);
 }
