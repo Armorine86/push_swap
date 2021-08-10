@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/10 13:25:21 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/10 14:43:46 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 # define PUSH_SWAP_H
 
 # include <stdio.h>
+# include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
 typedef struct s_stack
 {
-	int	*num;
-	int	size;
+	long	*num;
+	int		size;
 }				t_stack;
 
 typedef struct s_push_swap

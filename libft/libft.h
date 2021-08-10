@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:35:52 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/09 10:30:58 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/10 14:35:43 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int		ft_isupper(int c);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_nbrlen(long long nbr);
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_isalpha(int c);

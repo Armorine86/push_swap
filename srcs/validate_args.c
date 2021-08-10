@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 10:20:50 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/10 12:16:16 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/10 14:41:24 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 	
 	if (s->ac == 2)
 		i = 0;
-	while (i < s->stack_size)
+	while (i < s->stack_size)		// ** TO BE ERASED ** 
 	{
 		j = 0;
 		while (s->av[i][j])
@@ -34,9 +34,9 @@
 
 int	check_duplicate(t_info *info)
 {
-	int	i;
-	int	j;
-	int	tmp;
+	int		i;
+	int		j;
+	long	tmp;
 
 	i = 1;
 	if (info->ac == 2)
@@ -46,10 +46,12 @@ int	check_duplicate(t_info *info)
 	while (i < info->stack_size)
 	{
 		j = i + 1;
-		tmp = ft_atoi(info->av[i]);
+		tmp = ft_atol(info->av[i]);
+		if (tmp > (long)INT_MAX || tmp < (long)INT_MIN)
+			error_exit();
 		while (j < info->stack_size)
 		{
-			if (tmp == ft_atoi(info->av[j]))
+			if (tmp == ft_atol(info->av[j]))
 				return (0);
 			j++;
 		}
