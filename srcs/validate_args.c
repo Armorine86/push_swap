@@ -5,79 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 10:20:50 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/10 14:41:24 by mmondell         ###   ########.fr       */
+/*   Created: 2021/08/11 13:31:07 by mmondell          #+#    #+#             */
+/*   Updated: 2021/08/11 14:51:18 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/*void check_arg(t_info *s)
-{
-	int i = 1;
-	int j = 0;
-	
-	if (s->ac == 2)
-		i = 0;
-	while (i < s->stack_size)		// ** TO BE ERASED ** 
-	{
-		j = 0;
-		while (s->av[i][j])
-		{
-			write(1, &s->av[i][j], 1);
-			j++;
-		}
-		write(1, "\n", 1);
-		i++;
-	}
-}*/
-
-int	check_duplicate(t_info *info)
+int	check_duplicate(char **argv, int size)
 {
 	int		i;
 	int		j;
 	long	tmp;
 
-	i = 1;
-	if (info->ac == 2)
-		i = 0;
-	else
-		info->stack_size = info->ac;
-	while (i < info->stack_size)
+	i = 0;
+	while (i < size)
 	{
 		j = i + 1;
-		tmp = ft_atol(info->av[i]);
-		if (tmp > (long)INT_MAX || tmp < (long)INT_MIN)
-			error_exit();
-		while (j < info->stack_size)
+		tmp = ft_atol(argv[i]);
+		if (tmp < (long)INT_MIN || tmp > (long)INT_MAX)
+			return (1);
+		while (j < size)
 		{
-			if (tmp == ft_atol(info->av[j]))
-				return (0);
-			j++;
+			if (tmp == ft_atol(argv[j++]))
+				return (1);
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
-int	check_digits(t_info *s)
+int	check_digits(char **argv, int size)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	if (s->ac == 2)
-		i = 0;
-	else
-		s->stack_size = s->ac;
-	while (i < s->stack_size)
+	i = 0;
+	while (i < size)
 	{
-		j = 0;
-		if (s->av[i][j] == '-' || s->av[i][j] == '+')
+		j = 0;	
+		if (argv[i][j] == '-' || argv[i][j] == '+')
 			j++;
-		while (s->av[i][j])
+		while (argv[i][j])
 		{
-			if (!ft_isdigit(s->av[i][j]))
+			if (!ft_isdigit(argv[i][j]))
 				return (0);
 			j++;
 		}
@@ -86,25 +57,9 @@ int	check_digits(t_info *s)
 	return (1);
 }
 
-int	validate_args(t_info *info)
+int	validate_args(char **argv, int size)
 {
-	if (info->ac > 2)
-	{
-		if (!check_digits(info))
-			error_exit();
-		if (!check_duplicate(info))
-			error_exit();
-		info->stack_size = info->ac - 1;
-	}
-	else if (info->ac == 2)
-	{
-		info->av = ft_split(info->av[1], ' ');
-		while (info->av[info->stack_size])
-			info->stack_size++;
-		if (!check_digits(info))
-			error_exit();
-		if (!check_duplicate(info))
-			error_exit();
-	}
-	return (1);
+	if (!check_digits(argv, size) || !check_duplicate(argv, size))
+		return (1);
+	return (0);
 }

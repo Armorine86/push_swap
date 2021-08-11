@@ -5,35 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/12 11:05:57 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/10 14:15:22 by mmondell         ###   ########.fr       */
+/*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
+/*   Updated: 2021/08/11 15:03:16 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_info	*init_struct(t_info *info, int ac, char **av)
+int	get_stacksize(int argc, char **argv)
 {
-	info = ft_calloc(1, sizeof(t_info));
-	if (!info)
-		error_exit();
-	info->ac = ac;
-	info->av = av;
-	return (info);
+	int	i;
+	
+	i = 0;
+	while (argv[i])
+		i++;
+	if (argc > 2)
+		i = argc - 1;
+	return (i);
 }
 
-int	main(int ac, char **av)
+int main(int argc, char **argv)
 {
-	t_push_swap	stack;
-	t_info		*info;
+	pw	*stack;
+	int	stack_size;
+	int	free_me;
 
-	info = NULL;
-	if (ac < 2)
-		return (0);
-	info = init_struct(info, ac, av);
-	if (!info)
+	free_me = 0;
+	stack = NULL;
+	argv++;
+	if (argc < 2)
 		error_exit();
-	validate_args(info);
-	build_stacks(&stack, info);
-	free_all_exit(info, &stack);
+	if (argc == 2)
+	{
+		argv = ft_split(argv[0], ' ');
+		free_me++;
+	}
+	stack_size = get_stacksize(argc, argv);
+	if (!validate_args(argv, stack_size))
+		error_exit();
+	if (free_me)
+		free_tab(argv);
+	//printf("stack_size = %d\n", stack_size);
+	return (0);
 }
