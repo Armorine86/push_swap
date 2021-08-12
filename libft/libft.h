@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:35:52 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/11 10:06:43 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/12 10:41:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	*ft_free(void *ptr);
 char	*ft_str_to_upper(char *str);
 char	*ft_str_to_lower( char *str);
 char	*ft_strnew(size_t size);
@@ -78,7 +79,6 @@ int		ft_atoi(const char *str);
 long	ft_atol(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-int		ft_isspace(int c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

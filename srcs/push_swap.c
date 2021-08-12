@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/11 21:08:19 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/12 10:48:22 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	get_stacksize(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_pw	stack;
-	int	s_size;
-	int	free_me;
+	int		s_size;
+	int		free_me;
 
 	free_me = 0;
-	argv++;
 	if (argc < 2)
 		error_exit();
+	argv++;
 	if (argc == 2)
 	{
 		argv = ft_split(argv[0], ' ');
@@ -44,6 +44,5 @@ int	main(int argc, char **argv)
 		error_exit();
 	if (free_me)
 		free_tab(argv);
-	free_stacks(&stack);	//** NEED TO CHECK LEAKS
-	return (0);
+	free_all_exit(&stack);
 }
