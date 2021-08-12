@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 09:18:40 by mmondell          #+#    #+#              #
-#    Updated: 2021/08/11 20:29:36 by mmondell         ###   ########.fr        #
+#    Updated: 2021/08/12 10:08:44 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ obj:
 $(OBJ_DIR)%.o:$(SRCS_DIR)%.c
 	@gcc $(FLAGS) -I $(LIBFT_DIR) -I $(INC_DIR) -o $@ -c $< 
 $(LIBFT):
-	@make -C $(LIBFT_DIR)
+	@make bonus -C $(LIBFT_DIR)
 
 $(NAME): $(OBJ)
 	@gcc $(OBJ) $(LIBFT) -lm -o $(NAME)
