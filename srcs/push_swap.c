@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/12 11:05:45 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/12 11:09:34 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,4 @@ int	main(int argc, char **argv)
 	if (free_me)
 		free_tab(argv);
 	free_all_exit(&stack);
-
-	//* I AM TRYING GIT BRANCHING 
 }
