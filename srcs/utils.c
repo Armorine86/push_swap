@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:32:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/12 10:50:50 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/12 11:22:27 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	free_all_exit(t_pw *s)
 	free_stacks(s->a);
 	free_stacks(s->b);
 	free_stacks(s->c);
-	exit(EXIT_SUCCESS);
+	exit(0);
 }
 
 void	free_tab(char **tab)
