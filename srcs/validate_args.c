@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:31:07 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/11 14:51:18 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/11 20:51:58 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,17 @@ int	check_digits(char **argv, int size)
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]))
-				return (0);
+				return (1);
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	validate_args(char **argv, int size)
 {
-	if (!check_digits(argv, size) || !check_duplicate(argv, size))
+	if (check_digits(argv, size) || check_duplicate(argv, size))
 		return (1);
 	return (0);
 }
