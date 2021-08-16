@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/12 11:43:30 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/16 09:00:02 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	main(int argc, char **argv)
 	s_size = get_stacksize(argc, argv);
 	if (validate_args(argv, s_size) || build_stacks(&stack, argv, s_size))
 		error_exit();
+	execute_sorting(stack.a, stack.b, stack.c);
 	if (free_me)
 		free_tab(argv);
 	free_all_exit(&stack);
