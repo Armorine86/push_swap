@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/16 08:56:08 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/17 13:27:24 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,17 @@ typedef struct s_pw
 	t_stack	*c;
 }		t_pw;
 
-static void		argv_to_stack(t_stack *a, t_stack *c, char **argv, int size);
 int				validate_args(char **argv, int size);
-int				build_stacks(t_pw *stack, char **argv, int size);
+int				build_stacks(t_pw *stack, int size);
+void			execute_sorting(t_stack *a, t_stack *b, t_stack *c);
 void			free_tab(char **tab);
 void			error_exit(void);
 void			free_stacks(t_stack *s);
 void			free_all_exit(t_pw *s);
 
-
+/* OPERATIONS */
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
 
 #endif

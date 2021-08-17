@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   op_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/11 13:32:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/17 14:11:29 by mmondell         ###   ########.fr       */
+/*   Created: 2021/08/17 13:16:41 by mmondell          #+#    #+#             */
+/*   Updated: 2021/08/17 13:17:53 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	free_all_exit(t_pw *s)
+/*
+*	Take the first element at the top of B and push it to the top of A
+*/
+void	pa(t_stack *a, t_stack *b)
 {
-	free(s->a->num);
-	free(s->a);
-	free(s->b->num);
-	free(s->b);
-	free(s->c->num);
-	free(s->c);
-}
-
-void	free_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	if (tab)
-	{
-		while (tab[i])
-			free(tab[i++]);
-		free(tab);
-	}
-}
-
-void	error_exit(void)
-{
-	ft_putstr_fd("Error", 2);
-	exit (EXIT_FAILURE);
+	int tmp;
+	
+	if (b->size == 0)
+		return;
+	
 }
