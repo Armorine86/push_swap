@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 09:18:40 by mmondell          #+#    #+#              #
-#    Updated: 2021/08/18 11:26:06 by mmondell         ###   ########.fr        #
+#    Updated: 2021/08/18 14:38:53 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ OBJ_DIR	= ./obj/
 INC_DIR = ./include/
 LIBFT_DIR = ./libft/
 
-SRCS_FILES = push_swap.c validate_args.c utils.c build_stacks.c sort.c \
-			 op_swap.c op_push.c op_rotate.c op_rev_rotate.c
+SRCS_FILES = push_swap.c validate_args.c utils.c build_stacks.c sort.c	\
+			 op_swap.c op_push.c op_rotate.c op_rev_rotate.c quicksort_algo.c
 				 
 OBJ_FILES = $(SRCS_FILES:.c=.o)
 

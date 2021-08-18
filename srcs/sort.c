@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 09:03:26 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/18 11:36:54 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/18 15:26:37 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ void	print_stacks(t_stack *a, t_stack *b, t_stack *c)
 	printf("\nStack C Size = %d\n", c->size);
 }
 
-void	execute_sorting(t_stack *a, t_stack *b, t_stack *c)
+void	solve(t_stack *a, t_stack *b, t_stack *c)
 {
-	ra(a);
-	print_stacks(a, b, c);
+	//print_stacks(a, b, c);
+	quicksort(c);
+	//print_stacks(a, b, c);
 }

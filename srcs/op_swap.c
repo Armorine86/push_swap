@@ -6,13 +6,13 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 09:28:01 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/18 11:36:25 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/18 15:15:42 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	swap(t_stack *s)
+void	op_swap(t_stack *s)
 {
 	int	tmp;
 	int	i;
@@ -29,7 +29,7 @@ void	swap(t_stack *s)
 void	sa(t_stack *a)
 {
 	if (a->size > 2)
-		swap(a);
+		op_swap(a);
 	ft_putstr_fd("sa\n", 1);
 }
 
@@ -39,7 +39,7 @@ void	sa(t_stack *a)
 void	sb(t_stack *b)
 {
 	if (b->size > 2)
-		swap(b);
+		op_swap(b);
 	ft_putstr_fd("sb\n", 1);
 }
 
@@ -48,7 +48,7 @@ void	sb(t_stack *b)
 */
 void	ss(t_stack *a, t_stack *b)
 {
-	swap(a);
-	swap(b);
+	op_swap(a);
+	op_swap(b);
 	ft_putstr_fd("ss\n", 1);
 }
