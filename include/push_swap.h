@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/17 13:27:24 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:38:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,16 @@ void			free_stacks(t_stack *s);
 void			free_all_exit(t_pw *s);
 
 /* OPERATIONS */
-void	sa(t_stack *a);
-void	sb(t_stack *b);
-void	ss(t_stack *a, t_stack *b);
+void			sa(t_stack *a);
+void			sb(t_stack *b);
+void			ss(t_stack *a, t_stack *b);
+void			pa(t_stack *a, t_stack *b);
+void			pb(t_stack *a, t_stack *b);
+void			ra(t_stack *a);
+void			rb(t_stack *b);
+void			rr(t_stack *a, t_stack *b);
+void			rra(t_stack *a);
+void			rrb(t_stack *b);
+void			rrr(t_stack *a, t_stack *b);
 
 #endif

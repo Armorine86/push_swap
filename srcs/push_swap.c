@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/17 14:36:19 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:36:40 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	argv_to_stack(t_stack *a, t_stack *c, char **argv, int size)
 {
 	int	i;
-	int tmp;
+	int	tmp;
 
 	i = size - 1;
 	while (i >= 0)

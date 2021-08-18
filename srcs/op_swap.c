@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 09:28:01 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/17 14:40:25 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:36:25 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	swap(t_stack *s)
 	int	i;
 
 	i = s->size - 1;
-	if (s->size < 2)
-		return;
 	tmp = s->num[i];
 	s->num[i] = s->num[i - 1];
 	s->num[i - 1] = tmp;
@@ -30,8 +28,9 @@ void	swap(t_stack *s)
 */
 void	sa(t_stack *a)
 {
-	swap(a);
-	ft_putstr_fd("sa\n", 0);
+	if (a->size > 2)
+		swap(a);
+	ft_putstr_fd("sa\n", 1);
 }
 
 /*
@@ -39,8 +38,9 @@ void	sa(t_stack *a)
 */
 void	sb(t_stack *b)
 {
-	swap(b);
-	ft_putstr_fd("sb\n", 0);
+	if (b->size > 2)
+		swap(b);
+	ft_putstr_fd("sb\n", 1);
 }
 
 /*
@@ -50,5 +50,5 @@ void	ss(t_stack *a, t_stack *b)
 {
 	swap(a);
 	swap(b);
-	ft_putstr_fd("ss\n", 0);
+	ft_putstr_fd("ss\n", 1);
 }

@@ -6,15 +6,15 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 09:03:26 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/17 14:35:27 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:36:54 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void print_stacks(t_stack *a, t_stack *b, t_stack *c)
+void	print_stacks(t_stack *a, t_stack *b, t_stack *c)
 {
-	int i;
+	int	i;
 
 	i = a->size - 1;
 	while (i >= 0)
@@ -32,6 +32,6 @@ void print_stacks(t_stack *a, t_stack *b, t_stack *c)
 
 void	execute_sorting(t_stack *a, t_stack *b, t_stack *c)
 {
-	sa(a);
+	ra(a);
 	print_stacks(a, b, c);
 }

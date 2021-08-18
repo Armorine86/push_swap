@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:31:07 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/11 20:51:58 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:37:28 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	check_digits(char **argv, int size)
 	i = 0;
 	while (i < size)
 	{
-		j = 0;	
+		j = 0;
 		if (argv[i][j] == '-' || argv[i][j] == '+')
 			j++;
 		while (argv[i][j])
