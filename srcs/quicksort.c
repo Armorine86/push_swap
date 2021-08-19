@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 13:41:23 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/18 15:27:38 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/19 08:58:45 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,41 +21,48 @@ void	swap(t_stack *s, int first, int last)
 	s->num[last] = tmp;
 }
 
-int	partition(t_stack *s, int first, int last)
+int	partition(t_stack *s, int first, int last, int pivot)
 {
-	int	i;
-	int	index;
-	int	pivot;
-
-	index = first;
-	i = first;
-	pivot = s->num[last];
-	while (i < last)
+	while (first <= last)
 	{
-		if (s->num[i] < pivot)
+		while (s->num[first] < pivot)
+			first++;
+		while (s->num[last] > pivot)
+			last--;
+		if (first <= last)
 		{
-			swap(s, s->num[i], s->num[index]);
-			index++;
+			swap(s, first, last);
+			first++;
+			last--;
 		}
-		i++;
-		swap(s, s->num[last], s->num[index]);
 	}
-	return (index);
+	return (first);
 }
 
 void	sort_recurse(t_stack *s, int first, int last)
 {
 	int	index;
+	int	pivot;
 	
+	pivot = s->num[(first + last) / 2];
 	if (first < last)
 	{
-		index = partition(s, first, last);
+		index = partition(s, first, last, pivot);
 		sort_recurse(s, first, index - 1);
-		sort_recurse(s, index + 1, last);
+		sort_recurse(s, index, last);
 	}
 }
 
+/*
+*	credits: https://www.youtube.com/watch?v=SLauY6PpjW4
+*	Well explained Quicksort implementation.
+*/
 void	quicksort(t_stack *s)
 {
-	sort_recurse(s, 0, s->size - 1);  //! Bug avec le sorting.. 9 disparait du stack une fois sorté.
+	int	first;
+	int	last;
+
+	first = 0;
+	last = s->size - 1;
+	sort_recurse(s, first, last);
 }

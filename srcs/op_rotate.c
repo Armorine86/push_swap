@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 11:25:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/18 11:35:22 by mmondell         ###   ########.fr       */
+/*   Created: 2021/08/18 10:14:50 by mmondell          #+#    #+#             */
+/*   Updated: 2021/08/19 15:31:35 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	rotate(t_stack *s)
 	int	i;
 	int	tmp;
 
-	i = 0;
-	tmp = s->num[0];
-	while (i < s->size - 1)
+	i = s->size - 1;
+	tmp = s->num[i];
+	while (i > 0)
 	{
-		s->num[i] = s->num[i + 1];
-		i++;
+		s->num[i] = s->num[i - 1];
+		--i;
 	}
-	s->num[s->size - 1] = tmp;
+	s->num[0] = tmp;
 }
 
 /*

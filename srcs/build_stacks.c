@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 20:01:05 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/18 14:35:42 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/19 11:09:05 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 t_stack	*allocate_stack(int size)
 {
-	t_stack	*tab;
+	t_stack	*s;
 
-	tab = ft_calloc(1, sizeof(t_stack));
-	if (!tab)
+	s = ft_calloc(1, sizeof(t_stack));
+	if (!s)
 		return (NULL);
-	tab->num = ft_calloc((size_t)size, sizeof(int));
-	if (!tab->num)
-		return (ft_free(tab));
-	tab->size = 0;
-	return (tab);
+	s->num = ft_calloc((size_t)size, sizeof(int));
+	if (!s->num)
+		return (ft_free(s));
+	s->size = 0;
+	return (s);
 }
 
 int	build_stacks(t_pw *stack, int size)
