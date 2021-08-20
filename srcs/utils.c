@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:32:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 15:31:18 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 16:27:32 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,14 @@ void	error_exit(void)
 }
 
 
-void	print_stack(t_stack *s)
+void	print_stack(t_stack *a, t_stack *b)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	printf("\n---------  BOTTOM");
-	while (i <= s->size - 1)
-		printf("\n     %d     [%d]", s->num[i++], j++);
-	printf("\n---------  TOP\n");
-	printf(" Stack A\n\n");
+	int	i = 0, j = 0, k = 0, l = 0;
+	
+	printf("\n---------  BOTTOM ---------\n");
+	while (i <= a->size - 1)
+		printf("\n     %d  [%d]     %d  [%d]", a->num[i++], j++, b->num[k++], l++);
+	printf("\n\n---------  TOP ---------\n");
+	printf(" Stack A         Stack B\n\n");
 	//printf("\nStack A Size = %d\n", s->size);
 }
