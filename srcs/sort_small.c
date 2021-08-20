@@ -6,15 +6,30 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:28:23 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 12:13:33 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 14:00:31 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+int	find_max(t_stack *s)
+{
+	int	max;
+	int	i;
+
+	i = 0;
+	max = s->num[0];
+	while (i <= s->size - 1)
+	{
+		if (s->num[i] > max)
+			max = s->num[i];
+		i++;
+	}
+	return (max);
+}
+
 void	solve4_5(t_stack *a, t_stack *b)
 {
-	
 	a->size = a->size;
 	b->size = b->size;
 }

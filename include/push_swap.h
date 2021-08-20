@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 12:11:30 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 14:00:35 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,15 @@ int				validate_args(char **argv, int size);
 int				build_stacks(t_pw *stack, int size);
 
 /* SOLVER */
+
+void			rank_stacks(t_stack *a, t_stack *c);
 void			solve(t_stack *a, t_stack *b, t_stack *c);
 void			solve_small(t_stack *a, t_stack *b);
 void			quicksort(t_stack *s);
 void			dual_quicksort(t_stack *s);
 
-
 /* UTILITIES */
-int				find_max(t_stack *s);
+
 void			free_tab(char **tab);
 void			error_exit(void);
 void			free_all_exit(t_pw *s);
@@ -53,6 +54,7 @@ bool			check_sort(t_stack *s);
 void	print_stack(t_stack *s);
 
 /* OPERATIONS */
+
 void			sa(t_stack *a);
 void			sb(t_stack *b);
 void			ss(t_stack *a, t_stack *b);

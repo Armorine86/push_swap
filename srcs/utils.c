@@ -6,27 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:32:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 11:10:05 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 14:00:23 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-int	find_max(t_stack *s)
-{
-	int	max;
-	int	i;
-
-	i = 0;
-	max = s->num[0];
-	while (i <= s->size - 1)
-	{
-		if (s->num[i] > max)
-			max = s->num[i];
-		i++;
-	}
-	return (max);
-}
 
 bool	check_sort(t_stack *s)
 {

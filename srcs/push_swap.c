@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 12:13:05 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 14:02:24 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static void	argv_to_stack(t_stack *a, t_stack *c, char **argv, int size)
 		i--;
 		j++;
 	}
-	quicksort(c);
 	i = size - 1;
 	while (i >= 0)
 	{
@@ -36,6 +35,8 @@ static void	argv_to_stack(t_stack *a, t_stack *c, char **argv, int size)
 		a->size++;
 		i--;
 	}
+	quicksort(c);
+	rank_stacks(a, c);
 }
 
 int	get_stacksize(int argc, char **argv)
