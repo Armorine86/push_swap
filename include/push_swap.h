@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/19 15:19:51 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 12:11:30 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdbool.h>
 # include "../libft/libft.h"
 
 typedef struct s_stack
@@ -44,10 +45,11 @@ void			dual_quicksort(t_stack *s);
 
 
 /* UTILITIES */
+int				find_max(t_stack *s);
 void			free_tab(char **tab);
 void			error_exit(void);
 void			free_all_exit(t_pw *s);
-int				check_sort(t_stack *s);
+bool			check_sort(t_stack *s);
 void	print_stack(t_stack *s);
 
 /* OPERATIONS */

@@ -6,27 +6,43 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:32:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/19 15:19:51 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 11:10:05 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	check_sort(t_stack *s)
+int	find_max(t_stack *s)
+{
+	int	max;
+	int	i;
+
+	i = 0;
+	max = s->num[0];
+	while (i <= s->size - 1)
+	{
+		if (s->num[i] > max)
+			max = s->num[i];
+		i++;
+	}
+	return (max);
+}
+
+bool	check_sort(t_stack *s)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	j = 0;
-	while (i < s->size)
+	i = 0;
+	j = 1;
+	while (i < s->size - 1)
 	{
 		if (s->num[i] < s->num[j])
-			return(0);
+			return (false);
 		i++;
 		j++;
 	}
-	return (1);
+	return (true);
 }
 
 void	free_all_exit(t_pw *s)
@@ -62,9 +78,14 @@ void	error_exit(void)
 void	print_stack(t_stack *s)
 {
 	int	i;
+	int	j;
 
-	i = s->size - 1;
-	while (i >= 0)
-		printf("\nStack A: %d", s->num[i--]);
-	printf("\nStack A Size = %d\n", s->size);
+	i = 0;
+	j = 0;
+	printf("\n---------  BOTTOM");
+	while (i <= s->size - 1)
+		printf("\n     %d     [%d]", s->num[i++], j++);
+	printf("\n---------  TOP\n");
+	printf(" Stack A\n\n");
+	//printf("\nStack A Size = %d\n", s->size);
 }

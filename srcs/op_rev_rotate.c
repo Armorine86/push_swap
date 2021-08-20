@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 11:25:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/19 15:32:08 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 11:15:21 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	rev_rotate(t_stack *s)
 */
 void	rra(t_stack *a)
 {
-	if (a->size > 2)
+	if (a->size >= 2)
 		rev_rotate(a);
-	ft_putstr_fd("ra\n", 1);
+	ft_putstr_fd("rra\n", 1);
 }
 
 /*
@@ -44,9 +44,9 @@ void	rra(t_stack *a)
 */
 void	rrb(t_stack *b)
 {
-	if (b->size > 2)
+	if (b->size >= 2)
 		rev_rotate(b);
-	ft_putstr_fd("rb\n", 1);
+	ft_putstr_fd("rrb\n", 1);
 }
 
 /*

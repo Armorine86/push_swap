@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/19 14:24:44 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 12:13:05 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,25 @@
 static void	argv_to_stack(t_stack *a, t_stack *c, char **argv, int size)
 {
 	int	i;
+	int	j;
 	int	tmp;
 
 	i = size - 1;
+	j = 0;
 	while (i >= 0)
 	{
-		tmp = ft_atoi(argv[i]);
-		a->num[i] = tmp;
-		a->size++;
+		tmp = ft_atoi(argv[j]);
+		c->num[i] = tmp;
+		c->size++;
 		i--;
+		j++;
 	}
+	quicksort(c);
 	i = size - 1;
 	while (i >= 0)
 	{
-		c->num[i] = a->num[i];
-		c->size++;
+		a->num[i] = c->num[i];
+		a->size++;
 		i--;
 	}
 }
