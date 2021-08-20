@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 13:16:41 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/18 11:35:10 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 16:00:46 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	pa(t_stack *a, t_stack *b)
 /*
 *	Take the first element at the top of A and push it to the top of B
 */
-void	pb(t_stack *b, t_stack *a)
+void	pb(t_stack *a, t_stack *b)
 {
 	if (a->size != 0)
 		push(b, pull(a));

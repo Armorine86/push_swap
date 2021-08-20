@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 14:00:35 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 15:07:22 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void			dual_quicksort(t_stack *s);
 
 /* UTILITIES */
 
+int				find_index(t_stack *s, int num);
+bool			closer_to_top(t_stack *s, int num);
 void			free_tab(char **tab);
 void			error_exit(void);
 void			free_all_exit(t_pw *s);

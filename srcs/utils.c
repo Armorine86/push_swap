@@ -6,11 +6,12 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:32:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 14:00:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/20 15:31:18 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
 
 bool	check_sort(t_stack *s)
 {
