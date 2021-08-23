@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 09:18:40 by mmondell          #+#    #+#              #
-#    Updated: 2021/08/20 15:06:19 by mmondell         ###   ########.fr        #
+#    Updated: 2021/08/23 15:22:26 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,9 @@ OBJ_DIR	= ./obj/
 INC_DIR = ./include/
 LIBFT_DIR = ./libft/
 
-SRCS_FILES = push_swap.c validate_args.c utils.c build_stacks.c sort.c	 \
-			 op_swap.c op_push.c op_rotate.c op_rev_rotate.c quicksort.c \
-			 sort_small.c stack_rank.c sort_utils.c
+SRCS_FILES = push_swap.c validate_args.c utils.c build_stacks.c sort_big.c	 \
+			 op_swap.c op_push.c op_rotate.c op_rev_rotate.c quicksort.c	 \
+			 sort_small.c sort_utils.c utils2.c
 				 
 OBJ_FILES = $(SRCS_FILES:.c=.o)
 
@@ -41,6 +41,9 @@ $(LIBFT):
 
 $(NAME): $(OBJ)
 	@gcc $(OBJ) $(LIBFT) -lm -o $(NAME)
+
+viz:
+	@python3 pyviz.py `ruby -e "puts (1..50).to_a.shuffle.join(' ')"`
 
 clean:
 	@rm -Rf $(OBJ_DIR)

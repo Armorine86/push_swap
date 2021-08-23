@@ -6,26 +6,24 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:32:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 16:27:32 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/23 12:36:35 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 bool	check_sort(t_stack *s)
 {
 	int	i;
 	int	j;
 
-	i = 0;
-	j = 1;
-	while (i < s->size - 1)
+	i = 1;
+	j = s->num[0];
+	while (i <= s->size - 1)
 	{
-		if (s->num[i] < s->num[j])
+		if (s->num[i] > j)
 			return (false);
-		i++;
-		j++;
+		j = s->num[i++];
 	}
 	return (true);
 }
@@ -59,15 +57,18 @@ void	error_exit(void)
 	exit (EXIT_FAILURE);
 }
 
-
-void	print_stack(t_stack *a, t_stack *b)
+void	print_stack(t_stack *a, t_stack *b, t_stack *c)
 {
-	int	i = 0, j = 0, k = 0, l = 0;
-	
+	int	i = 0, j = 0, k = 0, l = 0, m = 0;
+
+	m = b->size;
+	while (m <= c->size - 1)
+		b->num[m++] = 0;
 	printf("\n---------  BOTTOM ---------\n");
+	
 	while (i <= a->size - 1)
 		printf("\n     %d  [%d]     %d  [%d]", a->num[i++], j++, b->num[k++], l++);
 	printf("\n\n---------  TOP ---------\n");
 	printf(" Stack A         Stack B\n\n");
-	//printf("\nStack A Size = %d\n", s->size);
+	printf("\nStack A Size = %d   Stack A Size = %d\n", a->size, b->size);
 }

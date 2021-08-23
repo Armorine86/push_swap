@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 09:03:26 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/19 15:20:35 by mmondell         ###   ########.fr       */
+/*   Created: 2021/08/23 15:17:18 by mmondell          #+#    #+#             */
+/*   Updated: 2021/08/23 15:18:24 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	solve(t_stack *a, t_stack *b, t_stack *c)
+int	bot(t_stack *s)
 {
-	//print_stacks(a, b, c);
-	print_stack(a);
-	quicksort(c);
-	print_stack(a);
-	print_stack(b);
+	return (s->num[0]);
+}
+
+int	top(t_stack *s)
+{
+	return (s->num[s->size - 1]);
 }

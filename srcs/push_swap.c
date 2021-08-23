@@ -6,11 +6,20 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 16:05:39 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/23 13:11:23 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+char	**split_argv(char *str, int *free_me)
+{
+	char	**ret;
+
+	ret = ft_split(str, ' ');
+	*free_me = 1;
+	return (ret);
+}
 
 static void	argv_to_stack(t_stack *a, t_stack *c, char **argv, int size)
 {
@@ -35,8 +44,12 @@ static void	argv_to_stack(t_stack *a, t_stack *c, char **argv, int size)
 		a->size++;
 		i--;
 	}
-	quicksort(c);
-	rank_stacks(a, c);
+	if (!check_sort(a) && a->size > 3)
+	{
+		quicksort(c);
+		rank_stacks(a, c);
+	}
+	//print_stack(a, c);
 }
 
 int	get_stacksize(int argc, char **argv)
@@ -54,7 +67,7 @@ int	get_stacksize(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_pw	stack;
-	int		s_size;
+	int		stack_size;
 	int		free_me;
 
 	free_me = 0;
@@ -62,16 +75,13 @@ int	main(int argc, char **argv)
 		error_exit();
 	argv++;
 	if (argc == 2)
-	{
-		argv = ft_split(argv[0], ' ');
-		free_me++;
-	}
-	s_size = get_stacksize(argc, argv);
-	if (validate_args(argv, s_size) || build_stacks(&stack, s_size))
+		argv = split_argv(argv[0], &free_me);
+	stack_size = get_stacksize(argc, argv);
+	if (validate_args(argv, stack_size) || build_stacks(&stack, stack_size))
 		error_exit();
-	argv_to_stack(stack.a, stack.c, argv, s_size);
-	if (s_size > 6)
-		solve(stack.a, stack.b, stack.c);
+	argv_to_stack(stack.a, stack.c, argv, stack_size);
+	if (stack_size > 6)
+		solve_big(stack.a, stack.b, stack.c);
 	else
 		solve_small(stack.a, stack.b);
 	if (free_me)

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:18:52 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 15:16:46 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/23 10:00:32 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,31 @@ bool	closer_to_top(t_stack *s, int num)
 	if (find_index(s, num) > s->size / 2)
 		return (true);
 	return (false);
+}
+
+void	rank_stacks(t_stack *a, t_stack *c)
+{
+	int	i;
+
+	i = 0;
+	while (i <= c->size - 1)
+	{
+		a->num[i] = find_index(c, a->num[i]);
+		i++;
+	}
+}
+
+int	find_average(t_stack *s)
+{
+	int	i;
+	int	total;
+
+	total = 0;
+	i = 0;
+	while (i <= s->size - 1)
+	{
+		total += s->num[i];
+		i++;
+	}
+	return (total / (s->size - 1));
 }

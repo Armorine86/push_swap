@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 16:25:26 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/23 15:19:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 typedef struct s_stack
 {
-	int *num;
+	int	*num;
 	int	size;
 }		t_stack;
 
@@ -33,14 +33,13 @@ typedef struct s_pw
 	t_stack	*c;
 }		t_pw;
 
-
 int				validate_args(char **argv, int size);
 int				build_stacks(t_pw *stack, int size);
 
 /* SOLVER */
 
 void			rank_stacks(t_stack *a, t_stack *c);
-void			solve(t_stack *a, t_stack *b, t_stack *c);
+void			solve_big(t_stack *a, t_stack *b, t_stack *c);
 void			solve_small(t_stack *a, t_stack *b);
 void			quicksort(t_stack *s);
 void			dual_quicksort(t_stack *s);
@@ -48,12 +47,16 @@ void			dual_quicksort(t_stack *s);
 /* UTILITIES */
 
 int				find_index(t_stack *s, int num);
+int				find_average(t_stack *s);
+int				find_max(t_stack *s);
+int				bot(t_stack *s);
+int				top(t_stack *s);
 bool			closer_to_top(t_stack *s, int num);
 void			free_tab(char **tab);
 void			error_exit(void);
 void			free_all_exit(t_pw *s);
 bool			check_sort(t_stack *s);
-void	print_stack(t_stack *a, t_stack *b);
+void	print_stack(t_stack *a, t_stack *b, t_stack *c);
 
 /* OPERATIONS */
 

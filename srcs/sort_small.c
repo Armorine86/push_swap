@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:28:23 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 16:29:45 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/23 13:11:20 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	check_if_closer_to_top(t_stack *a, t_stack *b, int i)
 {
-
 	while (a->num[a->size - 1] != i)
 	{
 		if (closer_to_top(a, i))
@@ -71,8 +70,7 @@ void	solve4_5(t_stack *a, t_stack *b)
 
 void	solve_small(t_stack *a, t_stack *b)
 {
-	print_stack(a, b);
-	if (check_sort(a) == 1)
+	if (check_sort(a))
 		return ;
 	if (a->size == 2)
 		sa(a);
@@ -80,5 +78,4 @@ void	solve_small(t_stack *a, t_stack *b)
 		solve_3(a);
 	else
 		solve4_5(a, b);
-	print_stack(a, b);
 }

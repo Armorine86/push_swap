@@ -6,50 +6,50 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 13:41:23 by mmondell          #+#    #+#             */
-/*   firstdated: 2021/08/20 12:12:08 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/23 13:07:13 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	swap(t_stack *s, int last, int first)
+void	swap(t_stack *s, int left, int right)
 {
 	int	tmp;
 	
-	tmp = s->num[last];
-	s->num[last] = s->num[first];
-	s->num[first] = tmp;
+	tmp = s->num[left];
+	s->num[left] = s->num[right];
+	s->num[right] = tmp;
 }
 
-int	partition(t_stack *s, int last, int first, int pivot)
+int	partition(t_stack *s, int left, int right, int pivot)
 {
-	while (last <= first)
+	while (left <= right)
 	{
-		while (s->num[last] > pivot)
-			last++;
-		while (s->num[first] < pivot)
-			first--;
-		if (last <= first)
+		while (s->num[left] < pivot)
+			left++;
+		while (s->num[right] > pivot)
+			right--;
+		if (left <= right)
 		{
-			swap(s, last, first);
-			last++;
-			first--;
+			swap(s, left, right);
+			left++;
+			right--;
 		}
 	}
-	return (last);
+	return (left);
 }
 
-void	sort_recurse(t_stack *s, int last, int first)
+void	sort_recurse(t_stack *s, int left, int right)
 {
 	int	index;
 	int	pivot;
 	
-	pivot = s->num[(last + first) / 2];
-	if (last < first)
+	pivot = s->num[(left + right) / 2];
+	if (left < right)
 	{
-		index = partition(s, last, first, pivot);
-		sort_recurse(s, last, index - 1);
-		sort_recurse(s, index, first);
+		index = partition(s, left, right, pivot);
+		sort_recurse(s, left, index - 1);
+		sort_recurse(s, index, right);
 	}
 }
 
@@ -60,10 +60,10 @@ void	sort_recurse(t_stack *s, int last, int first)
 */
 void	quicksort(t_stack *s)
 {
-	int	last;
-	int	first;
+	int	left;
+	int	right;
 
-	last = 0;
-	first = s->size - 1;
-	sort_recurse(s, last, first);
+	left = 0;
+	right = s->size - 1;
+	sort_recurse(s, left, right);
 }
