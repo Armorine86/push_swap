@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 18:08:00 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/24 08:21:36 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ int	main(int argc, char **argv)
 		error_exit();
 	argv_to_stack(stack.a, stack.c, argv, stack_size);
 	if (stack_size > 6)
-		solve_big(stack.a, stack.b, stack.c);
+		solve_big(&stack);
 	else
-		solve_small(stack.a, stack.b);
+		solve_small(&stack);
 	if (free_me)
 		free_tab(argv);
 	free_all_exit(&stack);

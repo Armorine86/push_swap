@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:28:23 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 13:11:20 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/24 08:27:21 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,14 @@ void	solve4_5(t_stack *a, t_stack *b)
 		pa(a, b);
 }
 
-void	solve_small(t_stack *a, t_stack *b)
+void	solve_small(t_pw *s)
 {
-	if (check_sort(a))
+	if (check_sort(s->a))
 		return ;
-	if (a->size == 2)
-		sa(a);
-	else if (a->size == 3)
-		solve_3(a);
+	if (s->a->size == 2)
+		sa(s->a);
+	else if (s->a->size == 3)
+		solve_3(s->a);
 	else
-		solve4_5(a, b);
+		solve4_5(s->a, s->b);
 }

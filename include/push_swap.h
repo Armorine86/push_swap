@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 20:04:26 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/24 09:30:34 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ int				build_stacks(t_pw *stack, int size);
 /* SOLVER */
 
 void			rank_stacks(t_stack *a, t_stack *c);
-void			solve_big(t_stack *a, t_stack *b, t_stack *c);
-void			solve_small(t_stack *a, t_stack *b);
+void			solve_big(t_pw *s);
+void			solve_small(t_pw *s);
 void			quicksort(t_stack *s);
 void			dual_quicksort(t_stack *s);
+void			push_sort_to_top(t_stack *a, int max);
 
 /* UTILITIES */
 
@@ -56,7 +57,9 @@ void			free_tab(char **tab);
 void			error_exit(void);
 void			free_all_exit(t_pw *s);
 bool			check_sort(t_stack *s);
-void	print_stack(t_stack *a, t_stack *b);
+bool			check_smaller_than_average(t_stack *a, int average);
+bool			check_bigger_than_average(t_stack *b, int average);
+
 
 /* OPERATIONS */
 
@@ -71,5 +74,8 @@ void			rr(t_stack *a, t_stack *b);
 void			rra(t_stack *a);
 void			rrb(t_stack *b);
 void			rrr(t_stack *a, t_stack *b);
+
+
+void	print_stacks(t_pw *s);
 
 #endif

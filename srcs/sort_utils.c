@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:18:52 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 10:00:32 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/24 08:17:06 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ int	find_average(t_stack *s)
 		total += s->num[i];
 		i++;
 	}
-	return (total / (s->size - 1));
+	return ((float)total / (s->size - 1) + 0.5f);
 }

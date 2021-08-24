@@ -6,76 +6,68 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 09:03:26 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 20:40:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/24 12:28:47 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	max_to_top(t_stack *a, t_stack *b)
+void	max_to_top(t_pw *s)
 {
 	int	max;
 
-	max = find_max(b);
-	if (top(b) == max)
+	max = find_max(s->b);
+	if (top(s->b) == max)
 	{
-		pa(a, b);
+		pa(s->a, s->b);
 		return ;
 	}
-	while (top(b) != max)
+	while (top(s->b) != max)
 	{
-		if (closer_to_top(b, max))
-			rb(b);
+		if (closer_to_top(s->b, max))
+			rb(s->b);
 		else
-			rrb(b);
+			rrb(s->b);
 	}
 }
 
-void	split_B_bigger(t_stack *a, t_stack *b, int average)
+void	split_B_bigger(t_pw *s, int average)
 {
-	if (b->size <= average)
+	if (s->b->size == 0)
 		return ;
-	if (top(b) == 0 || top(b) == bot(a) + 1)
-	{
-		pa(a, b);
-		ra(a);
-	}
-	else if (b->size < 13)
-		max_to_top(a, b);
-	else if (top(b) >= average)
-		pa(a, b);
-	else
-		rb(b);
-	print_stack(a, b);
-	split_B_bigger(a, b, average);
-}
-
-void	split_A_smaller(t_stack *a, t_stack *b,	int average)
-{
-	if (a->size <= average)
-		return ;
-	if (top(a) <= average)
-		pb(a, b);
-	ra(a);
-	split_A_smaller(a, b, average);
-}
-
-void	solve_B(t_stack *a, t_stack *b)
-{	
-	if (b->size == 0)
-		return ;
-	split_B_bigger(a, b, find_average(b));
-	solve_B(a, b);
 	
 }
 
-void	solve_big(t_stack *a, t_stack *b, t_stack *c)
+void	split_A_smaller(t_pw *s, int average)
 {
-	if (check_sort(a))
+	if (!check_smaller_than_average(s->a, average))
 		return ;
-	split_A_smaller(a, b, find_average(a));
-	print_stack(a, b);
-	solve_B(a, b);
-	print_stack(a, b);
-	c->size = c->size;
+	if (top(s->a) <= average)
+		pb(s->a, s->b);
+	else
+		ra(s->a);
+	//print_stacks(s);
+	split_A_smaller(s, average);
+}
+
+void	solve_B(t_pw *s, int average)
+{
+	int	max;
+
+	max = find_max(s->b);
+	if (s->b->size == 0)
+		return ;
+	split_B_bigger(s, average);
+	solve_B(s, average);
+	//push_sort_to_top(s->a, max);
+}
+
+void	solve_big(t_pw *s)
+{
+	if (check_sort(s->a))
+		return ;
+	split_A_smaller(s, find_average(s->a));
+	//print_stacks(s);
+	solve_B(s, find_average(s->b));
+	//print_stacks(s);
 }
