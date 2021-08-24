@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 13:11:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/23 18:08:00 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	argv_to_stack(t_stack *a, t_stack *c, char **argv, int size)
 		a->size++;
 		i--;
 	}
-	if (!check_sort(a) && a->size > 3)
+	if (a->size > 3)
 	{
 		quicksort(c);
 		rank_stacks(a, c);

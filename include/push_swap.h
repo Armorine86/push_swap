@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 15:19:09 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/23 20:04:26 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void			free_tab(char **tab);
 void			error_exit(void);
 void			free_all_exit(t_pw *s);
 bool			check_sort(t_stack *s);
-void	print_stack(t_stack *a, t_stack *b, t_stack *c);
+void	print_stack(t_stack *a, t_stack *b);
 
 /* OPERATIONS */
 

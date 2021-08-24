@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:32:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 12:36:35 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/23 20:06:34 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void	error_exit(void)
 	exit (EXIT_FAILURE);
 }
 
-void	print_stack(t_stack *a, t_stack *b, t_stack *c)
+void	print_stack(t_stack *a, t_stack *b)
 {
 	int	i = 0, j = 0, k = 0, l = 0, m = 0;
 
 	m = b->size;
-	while (m <= c->size - 1)
-		b->num[m++] = 0;
+	while (m <= 99)
+		b->num[m++] = -1;
 	printf("\n---------  BOTTOM ---------\n");
 	
 	while (i <= a->size - 1)
