@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/24 20:38:13 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/25 15:30:24 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,13 @@ void			solve_big(t_pw *s);
 void			solve_small(t_pw *s);
 void			quicksort(t_stack *s);
 void			dual_quicksort(t_stack *s);
-void			push_sort_to_top(t_stack *a, int max);
+//void			push_next_half(t_pw *s, int max);
+void			solve_B(t_pw *s);
 
 /* UTILITIES */
 
 int				find_max(t_stack *s);
+int				find_min(t_stack *s);
 int				bot(t_stack *s);
 int				top(t_stack *s);
 void			free_tab(char **tab);
