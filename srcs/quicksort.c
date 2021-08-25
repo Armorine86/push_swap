@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 13:41:23 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 13:07:13 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/24 20:53:31 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	swap(t_stack *s, int left, int right)
 {
 	int	tmp;
-	
+
 	tmp = s->num[left];
 	s->num[left] = s->num[right];
 	s->num[right] = tmp;
@@ -43,7 +43,7 @@ void	sort_recurse(t_stack *s, int left, int right)
 {
 	int	index;
 	int	pivot;
-	
+
 	pivot = s->num[(left + right) / 2];
 	if (left < right)
 	{

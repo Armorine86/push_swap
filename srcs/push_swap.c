@@ -6,11 +6,17 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/24 08:21:36 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/24 20:57:03 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	sort_and_rank(t_stack *a, t_stack *c)
+{
+	quicksort(c);
+	rank_stacks(a, c);
+}
 
 char	**split_argv(char *str, int *free_me)
 {
@@ -45,11 +51,7 @@ static void	argv_to_stack(t_stack *a, t_stack *c, char **argv, int size)
 		i--;
 	}
 	if (a->size > 3)
-	{
-		quicksort(c);
-		rank_stacks(a, c);
-	}
-	//print_stack(a, c);
+		sort_and_rank(a, c);
 }
 
 int	get_stacksize(int argc, char **argv)

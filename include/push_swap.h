@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/24 09:30:34 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/24 20:38:13 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int				build_stacks(t_pw *stack, int size);
 
 /* SOLVER */
 
-void			rank_stacks(t_stack *a, t_stack *c);
 void			solve_big(t_pw *s);
 void			solve_small(t_pw *s);
 void			quicksort(t_stack *s);
@@ -47,12 +46,9 @@ void			push_sort_to_top(t_stack *a, int max);
 
 /* UTILITIES */
 
-int				find_index(t_stack *s, int num);
-int				find_average(t_stack *s);
 int				find_max(t_stack *s);
 int				bot(t_stack *s);
 int				top(t_stack *s);
-bool			closer_to_top(t_stack *s, int num);
 void			free_tab(char **tab);
 void			error_exit(void);
 void			free_all_exit(t_pw *s);
@@ -60,6 +56,13 @@ bool			check_sort(t_stack *s);
 bool			check_smaller_than_average(t_stack *a, int average);
 bool			check_bigger_than_average(t_stack *b, int average);
 
+/* SORT_UTILITIES */
+
+void			push_rotate(t_pw *s);
+void			rank_stacks(t_stack *a, t_stack *c);
+bool			closer_to_top(t_stack *s, int num);
+int				find_average(t_stack *s);
+int				find_index(t_stack *s, int num);
 
 /* OPERATIONS */
 
