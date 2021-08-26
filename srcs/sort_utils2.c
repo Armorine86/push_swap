@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 20:31:54 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/25 14:45:45 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/26 10:59:22 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	find_min(t_stack *s)
 	i = 0;
 	while (i < s->size - 1)
 	{
-		if (min < s->num[i])
+		if (s->num[i] < min)
 			min = s->num[i];
 		i++;
 	}
-	return (i);
+	return (min);
 }
