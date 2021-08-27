@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 20:31:54 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/26 10:59:22 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/27 13:55:12 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	find_min(t_stack *s)
 
 	min = bot(s);
 	i = 0;
-	while (i < s->size - 1)
+	while (i <= s->size - 1)
 	{
 		if (s->num[i] < min)
 			min = s->num[i];

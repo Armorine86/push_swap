@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:32:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/24 08:32:48 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/27 13:09:05 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ bool	check_sort(t_stack *s)
 
 	i = 1;
 	j = s->num[0];
+	if (s->size < 2)
+		return (true);
 	while (i <= s->size - 1)
 	{
 		if (s->num[i] > j)

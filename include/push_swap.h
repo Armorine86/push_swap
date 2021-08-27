@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/26 12:53:28 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/27 13:49:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void			quicksort(t_stack *s);
 void			dual_quicksort(t_stack *s);
 void			push_next_half(t_pw *s, int max);
 void			sort_rest(t_pw *s);
-void			solve_B(t_pw *s);
+void			solve_b(t_pw *s);
 void			max_to_top(t_pw *s);
 
 /* UTILITIES */
