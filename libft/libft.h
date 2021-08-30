@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:35:52 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/12 10:41:09 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 10:16:01 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,9 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+
+/* GET_NEXT_LINE */
+
+int	get_next_line(char **line);
 
 #endif

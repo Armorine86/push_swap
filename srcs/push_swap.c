@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/27 13:40:35 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 10:11:28 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**split_argv(char *str, int *free_me)
 	return (ret);
 }
 
-static void	argv_to_stack(t_pw *s, char **argv, int size)
+void	argv_to_stack(t_pw *s, char **argv, int size)
 {
 	int	i;
 	int	j;
