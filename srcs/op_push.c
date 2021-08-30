@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 13:16:41 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 16:00:46 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:24:48 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 int	pull(t_stack *s)
 {

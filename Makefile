@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 09:18:40 by mmondell          #+#    #+#              #
-#    Updated: 2021/08/30 12:12:25 by mmondell         ###   ########.fr        #
+#    Updated: 2021/08/30 15:43:44 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS	= -Wextra -Werror -Wall -g
 GREEN = \033[32m
 SRCS_DIR = ./srcs/
 OBJ_DIR	= ./obj/
-INC_DIR = ./include/
+INC_DIR = ./includes/
 LIBFT_DIR = ./libft/
 
 SRCS_FILES = push_swap.c validate_args.c utils.c build_stacks.c sort_big.c	 \

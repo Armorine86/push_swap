@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 09:03:26 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/27 13:49:00 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:25:06 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	max_to_top(t_pw *s)
 {

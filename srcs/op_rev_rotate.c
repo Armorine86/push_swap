@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 11:25:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/20 11:15:21 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:24:52 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	rev_rotate(t_stack *s)
 {

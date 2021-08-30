@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:31:07 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/18 11:37:28 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:25:49 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 int	check_duplicate(char **argv, int size)
 {

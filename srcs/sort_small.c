@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:28:23 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/27 13:40:46 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:25:24 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	check_if_closer_to_top(t_stack *a, t_stack *b, int i)
 {

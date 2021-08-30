@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/30 10:11:28 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:24:30 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	sort_and_rank(t_stack *a, t_stack *c)
 {

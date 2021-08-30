@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 20:01:05 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/23 08:26:47 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:24:43 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 t_stack	*allocate_stack(int size)
 {

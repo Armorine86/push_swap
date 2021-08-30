@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 08:53:53 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/27 13:38:20 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:25:19 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	push_next_half(t_pw *s, int max)
 {

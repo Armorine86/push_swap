@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 20:31:54 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/27 13:55:12 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:25:32 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	push_rotate(t_pw *s)
 {
