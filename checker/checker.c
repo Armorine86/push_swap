@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 15:27:32 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/30 15:28:38 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/31 11:06:55 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "check.h"
+#include "../includes/check.h"
 
 void	exit_ko(void)
 {
@@ -66,7 +66,7 @@ void	validate_push_swap(t_pw *s)
 		ft_putstr_fd("OK", 1);
 }
 
-int	checker(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_pw	stack;
 	int		s_size;
