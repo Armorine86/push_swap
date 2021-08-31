@@ -6,11 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 15:27:32 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/31 11:06:55 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/31 15:27:15 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/check.h"
+#include "check.h"
 
 void	exit_ko(void)
 {
@@ -24,7 +24,7 @@ void	free_line(char *line)
 	line = NULL;
 }
 
-void	validate_operations(t_pw *s, char *line)
+bool	validate_operations(t_pw *s, char *line)
 {
 	if (!ft_strcmp(line, "pa"))
 		pa(s->a, s->b);
@@ -49,19 +49,33 @@ void	validate_operations(t_pw *s, char *line)
 	else if (!ft_strcmp(line, "rrr"))
 		rrr(s->a, s->b);
 	else
-		exit_ko();
+		return (false);
+	return (true);
 }
 
 void	validate_push_swap(t_pw *s)
 {
-	char	*line;
-	
-	while (get_next_line(&line))
+	char	moves[4];
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < 4)
 	{
-		validate_operations(s, line);
-		free_line(line);
+		j = i;
+		i += read(0, moves + i, 1);
+		if (j == i)
+			break ;
+		if (moves[i] == '\n')
+		{
+			moves[j] = 0;
+			if (!validate_operations(s, moves))
+				exit_ko();
+			i = 0;
+		}
 	}
-	free_line(line);
+	if (i == 4)
+		exit_ko();
 	if (check_sort(s->a))
 		ft_putstr_fd("OK", 1);
 }

@@ -6,12 +6,12 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 15:28:07 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/30 15:28:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/31 14:09:50 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECK_H
-#define CHECK_H
+# define CHECK_H
 
 # include "../includes/push_swap.h"
 

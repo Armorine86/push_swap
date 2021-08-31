@@ -6,14 +6,13 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/27 13:49:09 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/08/31 15:12:56 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -53,6 +52,10 @@ int				find_max(t_stack *s);
 int				find_min(t_stack *s);
 int				bot(t_stack *s);
 int				top(t_stack *s);
+void			sort_and_rank(t_stack *a, t_stack *c);
+char			**split_argv(char *str, int *free_me);
+void			argv_to_stack(t_pw *s, char **argv, int size);
+int				get_stacksize(int argc, char **argv);
 void			free_tab(char **tab);
 void			error_exit(void);
 void			free_all_exit(t_pw *s);
