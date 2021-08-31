@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by mmondell          #+#    #+#              #
-#    Updated: 2021/08/31 13:06:29 by mmondell         ###   ########.fr        #
+#    Updated: 2021/08/31 13:36:14 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS_DIR		= srcs/
 B_SRCS_DIR		= checker/
 
 OBJ_DIR			= obj/
+B_OBJ_DIR		= bonus_obj/
 
 INCLUDE_DIR		= includes/
 
@@ -60,7 +61,6 @@ LIBFT			= $(addprefix $(LIBFT_DIR), libft.a)
 ## ----- TOOLS AND COLORS ----- ##
 RM				= rm -Rf
 NO_PRINT		= --no-print-directory
-
 RED 			= \033[31m
 GREEN 			= \033[32m
 YELLOW 			= \033[33m
