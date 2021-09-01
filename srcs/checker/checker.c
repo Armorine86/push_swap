@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 15:27:32 by mmondell          #+#    #+#             */
-/*   Updated: 2021/09/01 12:08:15 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/01 12:14:18 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,8 @@ bool	validate_operations(t_pw *s, char *line)
 void	validate_push_swap(t_pw *s)
 {
 	char	*line;
-	int		ret;
 
-	while ((ret = get_next_line(0, &line)) > 0 || line != 0)
+	while (get_next_line(0, &line) || line != 0)
 	{
 		if (!line)
 			break ;
@@ -74,7 +73,7 @@ int	main(int argc, char **argv)
 	t_pw	stack;
 	int		s_size;
 	int		free_me;
-	
+
 	free_me = 0;
 	if (argc < 2)
 		exit (0);

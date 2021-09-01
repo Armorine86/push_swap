@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 09:40:04 by mmondell          #+#    #+#             */
-/*   Updated: 2021/09/01 08:38:47 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/01 12:13:08 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*read_line(int fd, int *ret, int i)
 {
 	char	c;
 	char	*str;
-	
-	if(!read(fd, &c, 1))
+
+	if (!read(fd, &c, 1))
 		c = 0;
 	if (c == '\n' || c == 0)
 	{

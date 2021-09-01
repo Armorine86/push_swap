@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 09:03:26 by mmondell          #+#    #+#             */
-/*   Updated: 2021/09/01 10:23:37 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/01 12:13:52 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	solve_b(t_pw *s)
 void	solve_big(t_pw *s)
 {
 	int	average;
-	
+
 	average = find_average(s->a);
 	split_a_smaller(s, average);
 	solve_b(s);
