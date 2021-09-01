@@ -6,16 +6,16 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 15:27:32 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/31 15:27:15 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/01 10:08:14 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check.h"
 
-void	exit_ko(void)
+void	exit_ko(t_pw *s)
 {
-	ft_putstr_fd("KO", 1);
-	exit (1);
+	ft_putstr_fd("\033[31m\nKO\033[0m", 1);
+	free_all_exit(s);
 }
 
 void	free_line(char *line)
@@ -55,29 +55,17 @@ bool	validate_operations(t_pw *s, char *line)
 
 void	validate_push_swap(t_pw *s)
 {
-	char	moves[4];
-	int		i;
-	int		j;
+	char	*line;
 
-	i = 0;
-	while (i < 4)
+	while (get_next_line(0, &line))
 	{
-		j = i;
-		i += read(0, moves + i, 1);
-		if (j == i)
+		if (!line)
 			break ;
-		if (moves[i] == '\n')
-		{
-			moves[j] = 0;
-			if (!validate_operations(s, moves))
-				exit_ko();
-			i = 0;
-		}
+		if (!validate_operations(s, line))
+			exit_ko(s);
+		free_line(line);
 	}
-	if (i == 4)
-		exit_ko();
-	if (check_sort(s->a))
-		ft_putstr_fd("OK", 1);
+	free_line(line);
 }
 
 int	main(int argc, char **argv)
@@ -85,7 +73,7 @@ int	main(int argc, char **argv)
 	t_pw	stack;
 	int		s_size;
 	int		free_me;
-
+	
 	free_me = 0;
 	if (argc < 2)
 		exit (0);
@@ -95,8 +83,12 @@ int	main(int argc, char **argv)
 	s_size = get_stacksize(argc, argv);
 	if (validate_args(argv, s_size) || build_stacks(&stack, s_size))
 		error_exit();
+	argv_to_stack(&stack, argv, s_size);
+	validate_push_swap(&stack);
 	if (!check_sort(stack.a))
-		validate_push_swap(&stack);
+		exit_ko(&stack);
+	else
+		ft_putstr_fd("\033[32m\nOK\033[0m", 1);
 	if (free_me)
 		free_tab(argv);
 	free_all_exit(&stack);

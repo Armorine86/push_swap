@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:28:23 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/30 13:25:24 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/01 10:24:43 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	solve_3(t_stack *s)
 		rra(s);
 	else if (max == s->num[2])
 		ra(s);
-	if (check_sort(s) != 1)
+	if (!check_sort(s))
 		sa(s);
 }
 

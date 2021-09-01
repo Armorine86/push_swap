@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by mmondell          #+#    #+#              #
-#    Updated: 2021/08/31 14:42:38 by mmondell         ###   ########.fr        #
+#    Updated: 2021/09/01 10:22:44 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME 			= push_swap
 
 ## ----- NAME OF THE BONUS PART ----- ##
-B_NAME			= push_swap_checker
+B_NAME			= checker
 
 ## ----- CHOOSE COMPILER AND FLAGS ----- ##
 CC				= gcc
@@ -22,7 +22,7 @@ CFLAGS			= -Wall -Wextra -Werror -g
 
 ## ----- PATH TO FOLDERS ----- ##
 SRCS_DIR		= srcs/
-B_SRCS_DIR		= checker/
+B_SRCS_DIR		= srcs/checker/
 
 OBJ_DIR			= obj/
 
