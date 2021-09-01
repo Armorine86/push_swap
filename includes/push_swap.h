@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/09/01 12:05:05 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/01 13:07:59 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ typedef struct s_pw
 	t_stack	*c;
 }		t_pw;
 
-int				validate_args(char **argv, int size);
-int				build_stacks(t_pw *stack, int size);
-
 /* SOLVER */
 
 void			solve_big(t_pw *s);
@@ -48,6 +45,8 @@ void			max_to_top(t_pw *s);
 
 /* UTILITIES */
 
+int				validate_args(char **argv, int size);
+int				build_stacks(t_pw *stack, int size);
 int				find_max(t_stack *s);
 int				find_min(t_stack *s);
 int				bot(t_stack *s);
