@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by mmondell          #+#    #+#              #
-#    Updated: 2021/09/01 10:22:44 by mmondell         ###   ########.fr        #
+#    Updated: 2021/09/01 12:07:49 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,7 @@ bonus: $(B_NAME)
 
 $(B_NAME): $(B_OBJS)
 	$(LIBFT)
-	$(CC) $(B_OBJS) -L$(LIBFT_DIR) -lft -o $(B_NAME)
+	$(CC) $(B_OBJS) -I$(INCLUDE_DIR) -L$(LIBFT_DIR) -lft -o $(B_NAME)
 	
 ## ----- CLEAN COMMANDS ----- ##
 clean:
