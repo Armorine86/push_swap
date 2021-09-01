@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:28:23 by mmondell          #+#    #+#             */
-/*   Updated: 2021/09/01 10:24:43 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/01 11:00:29 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,10 @@ void	solve_small(t_pw *s)
 		solve_3(s->a);
 	else
 		solve4_5(s->a, s->b);
+	int i = 0;
+	while (i < s->a->size)
+	{
+		ft_putnbr(s->a->num[i++]);
+		ft_putchar('\n');
+	}
 }

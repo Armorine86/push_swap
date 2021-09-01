@@ -1,46 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 09:40:04 by mmondell          #+#    #+#             */
-/*   Updated: 2021/09/01 08:38:47 by mmondell         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-char	*read_line(int fd, int *ret, int i)
+int get_next_line(int fd, char **line)
 {
-	char	c;
-	char	*str;
-	
-	if(!read(fd, &c, 1))
-		c = 0;
-	if (c == '\n' || c == 0)
-	{
-		str = malloc(sizeof(char) * (i + 1));
-		str[i] = 0;
-		*ret = 1;
-		if (c == 0)
-			*ret = 0;
-		return (str);
-	}
-	else
-	{
-		str = read_line(fd, ret, i + 1);
-		str[i] = c;
-	}
-	return (str);
-}
+	char *buffer;
+	int i = 0;
+	int r = 0;
+	char c;
 
-int	get_next_line(int fd, char **line)
-{
-	int	ret;
-
-	ret = 1;
-	*line = read_line(fd, &ret, 0);
-	return (ret);
+	if (!(buffer = (char *)malloc(10000)))
+		return (-1);
+	while ((r = read(fd, &c, 1)) && c != '\n' && c != '\0')
+	{
+		if (c != '\n' && c != '\0')
+			buffer[i] = c;
+		i++;
+	}
+	buffer[i] = '\0';
+	*line = buffer;
+	return (r);
 }
