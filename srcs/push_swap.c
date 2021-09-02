@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:47:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/09/01 10:12:09 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/02 15:22:07 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	argv_to_stack(&stack, argv, stack_size);
 	if (!check_sort(stack.a))
 	{
-		if (stack_size > 6)
+		if (stack_size > 5)
 			solve_big(&stack);
 		else
 			solve_small(&stack);
