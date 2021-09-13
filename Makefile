@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by mmondell          #+#    #+#              #
-#    Updated: 2021/09/01 12:07:49 by mmondell         ###   ########.fr        #
+#    Updated: 2021/09/13 13:47:36 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ LIBFT			= $(MAKE) bonus -C $(LIBFT_DIR)
 
 ## ----- ALL ACTION DEPENDENCIES AND RECIPE FOR MAIN PROGRAM ----- ##
 all: obj $(NAME)
-	@echo "$(GREEN)Compilation Completed Successfully$(NORMAL)"
+#	@echo "$(GREEN)Compilation Completed Successfully$(NORMAL)"
 
 $(OBJ_DIR)%.o:%.c
 	$(CC) $(CFLAGS) -I$(LIBFT_DIR) -I$(INCLUDE_DIR) -o $@ -c $<
@@ -93,7 +93,10 @@ bonus: $(B_NAME)
 $(B_NAME): $(B_OBJS)
 	$(LIBFT)
 	$(CC) $(B_OBJS) -I$(INCLUDE_DIR) -L$(LIBFT_DIR) -lft -o $(B_NAME)
-	
+
+## ----- ACTION TO SUMMON THE VIZUALIZER ----- ##
+viz:
+	python3 pyviz.py `ruby -e "puts (1..100).to_a.shuffle.join(' ')"`
 ## ----- CLEAN COMMANDS ----- ##
 clean:
 	$(RM) $(OBJS) $(B_OBJS)
