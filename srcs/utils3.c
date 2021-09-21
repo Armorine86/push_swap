@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:05:55 by mmondell          #+#    #+#             */
-/*   Updated: 2021/08/31 14:08:07 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/21 08:08:52 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,12 @@ void	argv_to_stack(t_pw *s, char **argv, int size)
 {
 	int	i;
 	int	j;
-	int	tmp;
 
 	i = size - 1;
 	j = 0;
 	while (i >= 0)
 	{
-		tmp = ft_atoi(argv[j]);
-		s->c->num[i] = tmp;
+		s->c->num[i] = ft_atoi(argv[j]);
 		s->c->size++;
 		i--;
 		j++;
