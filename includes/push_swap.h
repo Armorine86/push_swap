@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:23:46 by mmondell          #+#    #+#             */
-/*   Updated: 2021/09/21 08:11:08 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/09/21 10:05:40 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int				find_min(t_stack *s);
 int				bot(t_stack *s);
 int				top(t_stack *s);
 int				get_stacksize(int argc, char **argv);
-void			sort_and_rank(t_stack *a, t_stack *c);
 char			**split_argv(char *str, int *free_me);
+void			sort_and_rank(t_stack *a, t_stack *c);
 void			argv_to_stack(t_pw *s, char **argv, int size);
 void			free_tab(char **tab);
 void			error_exit(void);
